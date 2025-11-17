@@ -1,0 +1,79 @@
+# 1. 상태 확인
+  git status
+# 2. 변경사항 추가
+  git add .
+# 3. 커밋
+  git commit -m "작업 내용 설명"
+# 4. 원격에 올리기
+  git push
+
+**저장소 초기화 및 복제**
+# 새 Git 저장소 초기화
+  git init
+# 원격 저장소 복제
+  git clone [저장소URL]
+
+**파일 상태 관리**
+# 현재 상태 확인
+  git status
+# 변경사항 확인
+  git diff
+# 커밋 기록 보기
+  git log
+  git log --oneline  # 간단한 형태로
+
+**파일 추가 및 커밋**
+# 파일을 스테이징 영역에 추가
+  git add 파일명
+  git add .          # 모든 변경사항 추가
+  git add -A         # 모든 변경사항 추가 (삭제 포함)
+# 커밋 생성
+  git commit -m "커밋 메시지"
+  git commit -am "메시지"  # 추가+커밋 동시에
+
+** 브랜치 관리**
+# 브랜치 목록 보기
+  git branch
+  git branch -a      # 원격 브랜치 포함
+# 새 브랜치 생성
+  git branch 브랜치명
+# 브랜치 이동
+  git checkout 브랜치명
+  git switch 브랜치명  # 최신 명령어
+# 브랜치 생성+이동
+  git checkout -b 브랜치명
+  git switch -c 브랜치명
+# 브랜치 삭제
+  git branch -d 브랜치명
+
+**브랜치 병합**
+# 현재 브랜치로 다른 브랜치 병합
+  git merge 브랜치명
+# 브랜치 병합 취소
+  git merge --abort
+
+** 원격 저장소 관리**
+** 원격 저장소 연결**
+# 원격 저장소 추가
+  git remote add origin [저장소URL]
+# 원격 저장소 확인
+  git remote -v
+** 동기화 **
+# 원격 저장소에서 가져오기
+  git fetch
+  git pull           # fetch + merge
+# 원격 저장소에 올리기
+  git push
+  git push origin 브랜치명
+  git push -u origin 브랜치명  # 첫 push시
+
+**변경사항 되돌리기**
+# 작업 디렉토리 변경사항 취소
+  git checkout -- 파일명
+  git restore 파일명  # 최신 명령어
+# 스테이징 취소
+  git reset 파일명
+  git restore --staged 파일명
+# 커밋 되돌리기
+  git reset HEAD~1   # 최근 커밋 취소
+  git revert 커밋해시  # 안전한 되돌리기
